@@ -1,11 +1,11 @@
 import connectToMongoDB from "./MongoDbClient.js";
 
-export async function createCryptoData(cryptoData){
+export async function createCryptoDataDb(cryptoData){
     const cryptoDataCollection = await connectToMongoDB("crypto_data_collection")
     await cryptoDataCollection.insertOne(cryptoData)
 }
 
-export async function getCryptoData(dateRanges, cryptoCurrencies){
+export async function getCryptoDataDb(dateRanges, cryptoCurrencies){
     const cryptoDataCollection = await connectToMongoDB("crypto_data_collection")
     const query = {
         $or: dateRanges.map((dateRange) => {
@@ -23,6 +23,5 @@ export async function getCryptoData(dateRanges, cryptoCurrencies){
         projection[cryptoCurrency] = 1;
     });
 
-    const result = await cryptoDataCollection.find(query, { projection }).toArray();
-    console.log(result);
+    return await cryptoDataCollection.find(query, { projection }).toArray();
 }
