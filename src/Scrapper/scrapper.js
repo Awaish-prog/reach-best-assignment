@@ -2,7 +2,7 @@ import * as puppeteer from 'puppeteer';
 
 const url = process.env.CRYPTO_SITE_URL;
 
-export async function scrapeCoinMarketCap() {
+export async function scrapCryptoData(){
     try {
       
         const browser = await puppeteer.launch();
@@ -49,5 +49,5 @@ export async function scrapeCoinMarketCap() {
     }
     catch(e){
         console.log(e);
-    }
+    }   
 }

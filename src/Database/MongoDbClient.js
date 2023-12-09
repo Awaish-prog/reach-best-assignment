@@ -1,4 +1,4 @@
-const { MongoClient } = require("mongodb");
+import { MongoClient } from "mongodb";
 
 const mongoURL = process.env.MONGO_DB_CONNECTION_STRING
 
