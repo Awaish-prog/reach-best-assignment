@@ -17,6 +17,6 @@
 
 ## Design decisions
 
-1. This web scrapper stores data for each day separately so that we can get a better of how a particular cryptocurrency is performing.
+1. This web scrapper stores data for each day separately so that we can get a better idea of how a particular cryptocurrency is performing.
 2. I have added multiple date ranges data fetching in one api call so that it becomes easier to compare performance in different time frames.
 3. We can fetch data of multiple cryptocurrencies to compare their market caps and prices.
