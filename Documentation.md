@@ -6,7 +6,7 @@
 2. It takes data of top 100 cryptocurrencies and stores it in a mongodb database.
 3. It receives 2 inputs from frontend, first is a list of cryptocurrencies, second is a list of date ranges.
 4. Once it receives request from frontend it sends average prices, maximum prices, average market caps and maximum market caps of selected cryptocurrencies for selected date ranges.
-5. Watch this [video](https://www.loom.com/share/5b87f937f1ae4578a364729b4a26edc2?sid=b159135b-8bea-42e6-a56b-909f3f1f7586) for demo and code walkthrough.
+5. Watch this [video](https://www.loom.com/share/91530f4cabfd4bc490e95df8051086c5?sid=ae4eaecb-80a7-45bd-8fde-1508d7d2e248) for demo and code walkthrough.
 
 ## Technologies used
 
