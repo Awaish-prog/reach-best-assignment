@@ -1,9 +1,7 @@
 import { MongoClient } from "mongodb";
 
-const mongoURL = process.env.MONGO_DB_CONNECTION_STRING
-
 async function connectToMongoDB(collectionString) {
-    const mongoClient = new MongoClient(mongoURL, {
+    const mongoClient = new MongoClient(process.env.MONGO_DB_CONNECTION_STRING, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     });

@@ -25,3 +25,10 @@ export async function getCryptoDataDb(dateRanges, cryptoCurrencies){
 
     return await cryptoDataCollection.find(query, { projection }).toArray();
 }
+
+export async function getCryptoCurrenciesDb(){
+    const cryptoDataCollection = await connectToMongoDB("crypto_data_collection")
+    const cryptoCurrencies = await cryptoDataCollection.find().sort({ _id: -1 }).limit(1).toArray();
+
+    return Object.keys(cryptoCurrencies[0])
+}

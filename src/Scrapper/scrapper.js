@@ -1,14 +1,10 @@
 import * as puppeteer from 'puppeteer';
 
-const url = process.env.CRYPTO_SITE_URL;
-
 export async function scrapCryptoData(){
     try {
-      
         const browser = await puppeteer.launch();
         const page = await browser.newPage();
-        await page.goto(url);
-        
+        await page.goto(process.env.CRYPTO_SITE_URL);
         await page.evaluate(() => {
           window.scrollTo(0, 2000);
         });
@@ -33,7 +29,7 @@ export async function scrapCryptoData(){
 
 
         const tbody = await page.waitForSelector('tbody');
-
+        
         const tbodyContent = await page.evaluate((element) => {
             const rows = Array.from(element.querySelectorAll('tr'));
 
@@ -44,7 +40,6 @@ export async function scrapCryptoData(){
         }, tbody);
       
         await browser.close();
-
         return tbodyContent
     }
     catch(e){
